@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CheckStyle-IDEA" serialisationVersion="2">
+    <checkstyleVersion>8.14</checkstyleVersion>
+    <scanScope>JavaOnlyWithTests</scanScope>
+    <option name="thirdPartyClasspath" />
+    <option name="activeLocationIds">
+      <option value="829f2c46-b0f7-48f8-a94e-58b06fbe09cf" />
+    </option>
+    <option name="locations">
+      <list>
+        <ConfigurationLocation id="bundled-sun-checks" type="BUNDLED" scope="All" description="Sun Checks">(bundled)</ConfigurationLocation>
+        <ConfigurationLocation id="bundled-google-checks" type="BUNDLED" scope="All" description="Google Checks">(bundled)</ConfigurationLocation>
+        <ConfigurationLocation id="829f2c46-b0f7-48f8-a94e-58b06fbe09cf" type="HTTP_URL" scope="All" description="TechQA">https://github.deezerdev.com/raw/QA-Team/automated_tests_checkstyles/master/deezer_checks.xml</ConfigurationLocation>
+      </list>
+    </option>
+  </component>
+</project>
