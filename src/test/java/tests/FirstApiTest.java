@@ -255,4 +255,51 @@ public class FirstApiTest {
             .body("postId", everyItem(equalTo(postId)))
             .log().body();
     }
+
+    @Test
+    public void testGetAPhotoFromAlbum(){
+
+        //Get album ID of first album
+        int albumId =
+            given()
+                .when()
+                .get("/albums")
+                .then()
+                .statusCode(200)
+                .extract()
+                .path("[5].id"); //Get ID of first album
+        System.out.println("Album ID: " + albumId);
+
+        //Get all albums
+        given()
+            .when()
+            .get("/albums")
+            .then()
+            .statusCode(200)
+            .body("size()", greaterThan(0))
+            .log().body();
+
+        //Get a specific album
+        given()
+            .pathParams("albumId", albumId)
+            .when()
+            .get("/albums/{albumId}")
+            .then()
+            .statusCode(200)
+            .body("id", equalTo(albumId))
+            .log().body();
+
+        //Get photos for that album (/photos?albumId=X)
+        given()
+            .queryParam("albumId", albumId)
+            .when()
+            .get("/photos")
+            .then()
+            .statusCode(200)
+            .body("size()", greaterThan(0))
+            .body("albumId", everyItem(equalTo(albumId)))
+            .log().body();
+    System.out.println(("All photos for album ID " + albumId + " retrieved successfully."));
+
+    }
 }
