@@ -227,7 +227,7 @@ This project demonstrates proficiency in:
 ## 👤 Author
 
 **Inas**  
-QA Engineer @ Deezer  
+QA Engineer   
 
 **Professional Goal**: Advancing from QA to Senior SDET through hands-on framework development and automation expertise.
 
