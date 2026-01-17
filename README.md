@@ -1,58 +1,42 @@
-# API Test Automation Framework with RestAssured
+# 🚀 API Test Automation Framework
 
-## 📋 Project Overview
-Comprehensive API test automation framework built with RestAssured for testing RESTful APIs. This project demonstrates end-to-end API testing capabilities including CRUD operations, data validation, and multi-step workflows.
+A professional-grade REST API test automation framework built with Java, RestAssured, and TestNG. This framework demonstrates industry best practices for API testing including structured helpers, reusable utilities, and comprehensive test coverage.
 
-## 🛠️ Technology Stack
-- **Language:** Java 17
-- **Build Tool:** Maven
-- **Testing Framework:** TestNG 7.7.1
-- **API Testing:** RestAssured 5.3.0
-- **API Under Test:** JSONPlaceholder (https://jsonplaceholder.typicode.com)
+## 📋 Table of Contents
+- [Overview](#overview)
+- [Tech Stack](#tech-stack)
+- [Project Structure](#project-structure)
+- [Features](#features)
+- [Setup Instructions](#setup-instructions)
+- [Running Tests](#running-tests)
+- [Test Coverage](#test-coverage)
+- [Framework Architecture](#framework-architecture)
+- [Key Learnings](#key-learnings)
+- [Future Enhancements](#future-enhancements)
+- [Author](#author)
 
-## ✨ Features
-- Complete CRUD operation testing (Create, Read, Update, Delete)
-- Positive and negative test scenarios
-- Dynamic data extraction and reuse
-- Multi-step workflow testing
-- Query parameter and path parameter handling
-- Comprehensive response validation
-- Detailed logging for debugging
+## 🎯 Overview
 
-## 📦 Test Coverage
+This framework provides a scalable and maintainable approach to REST API testing. Built as part of a professional development journey from QA Engineer to Senior SDET, it showcases:
 
-### User Management
-- Get all users
-- Get single user by ID
-- Get non-existent user (negative test)
-- Create new user
-- Update existing user
-- Delete user
+- Clean code architecture
+- Separation of concerns (tests, helpers, utilities)
+- Reusable components
+- Professional test organization
+- Industry-standard tools and practices
 
-### Posts & Comments
-- Multi-step workflow (Create → Read → Delete)
-- Extract and validate user posts
-- Verify comment ownership
+**API Under Test:** [JSONPlaceholder](https://jsonplaceholder.typicode.com/) - A free fake REST API for testing and prototyping
 
-### Albums & Photos
-- Get albums
-- Get specific album
-- Retrieve photos by album ID
+## 🛠️ Tech Stack
 
-## 🚀 How to Run
-
-### Prerequisites
-- Java 17 or higher
-- Maven 3.6+
-
-### Execution
-```bash
-# Run all tests
-mvn clean test
-
-# Run specific test class
-mvn test -Dtest=FirstApiTest
-```
+| Technology | Version | Purpose |
+|------------|---------|---------|
+| Java | 17 | Programming Language |
+| Maven | 3.x | Build & Dependency Management |
+| RestAssured | 5.3.0 | REST API Testing Library |
+| TestNG | 7.7.1 | Testing Framework |
+| Hamcrest | 2.1 | Assertion Library |
+| Gson | 2.10.1 | JSON Processing |
 
 ## 📁 Project Structure
 ```
@@ -60,78 +44,216 @@ api-test-framework/
 ├── src/
 │   └── test/
 │       └── java/
+│           ├── base/
+│           │   └── BaseTest.java              # Common test setup and utilities
+│           ├── config/
+│           │   └── Endpoints.java             # Centralized endpoint definitions
+│           ├── helpers/
+│           │   ├── UserHelper.java            # User API operations
+│           │   └── PostHelper.java            # Post API operations
 │           ├── tests/
-│           │   └── FirstApiTest.java
-│           ├── utils/
-│           └── config/
-├── pom.xml
-└── README.md
+│           │   ├── UserTests.java             # User endpoint test cases
+│           │   └── PostTests.java             # Post endpoint test cases
+│           └── utils/
+│               └── TestDataBuilder.java       # Test data generation utilities
+├── testng.xml                                  # TestNG suite configuration
+├── pom.xml                                     # Maven configuration
+└── README.md                                   # Project documentation
 ```
 
-## 🎯 Learning Objectives
-This framework was built as part of a 6-month roadmap to advance from QA Engineer to Senior SDET, focusing on:
-- API test automation best practices
-- RestAssured framework mastery
-- Test design patterns
-- CI/CD integration readiness
+## ✨ Features
+
+### Framework Capabilities
+- ✅ **Modular Architecture**: Separation of test logic, helpers, and utilities
+- ✅ **Reusable Components**: Helper classes for common API operations
+- ✅ **Dynamic Test Data**: Builders for generating test data
+- ✅ **Centralized Configuration**: All endpoints defined in one place
+- ✅ **Comprehensive Logging**: Detailed test execution logs
+- ✅ **Clean Test Reports**: TestNG HTML reports
+
+### Testing Capabilities
+- ✅ **CRUD Operations**: Complete Create, Read, Update, Delete testing
+- ✅ **Positive Testing**: Happy path scenarios
+- ✅ **Negative Testing**: Error handling and edge cases
+- ✅ **Data Validation**: Response body, status codes, headers
+- ✅ **Multi-step Workflows**: Complex test scenarios
+- ✅ **Query Parameters**: Filtering and search operations
+- ✅ **Path Parameters**: Dynamic URL handling
+
+## 🚀 Setup Instructions
+
+### Prerequisites
+- **Java JDK 17** or higher installed
+- **Maven 3.6+** installed
+- IDE (IntelliJ IDEA recommended)
+
+### Installation
+
+1. **Clone the repository**
+```bash
+git clone https://github.com/YOUR_USERNAME/api-test-framework.git
+cd api-test-framework
+```
+
+2. **Install dependencies**
+```bash
+mvn clean install
+```
+
+3. **Verify setup**
+```bash
+mvn clean test
+```
+
+## 🎮 Running Tests
+
+### Run all tests
+```bash
+mvn clean test
+```
+
+### Run specific test class
+```bash
+mvn test -Dtest=UserTests
+mvn test -Dtest=PostTests
+```
+
+### Run with TestNG suite
+```bash
+mvn test -DsuiteXmlFile=testng.xml
+```
+
+### View test reports
+After test execution, open:
+```
+target/surefire-reports/index.html
+```
+
+## 📊 Test Coverage
+
+### User Management Tests (6 tests)
+| Test Case | Description | Method |
+|-----------|-------------|--------|
+| Get All Users | Retrieve list of all users | GET |
+| Get Single User | Retrieve specific user by ID | GET |
+| Get Non-Existent User | Verify 404 for invalid user | GET |
+| Create User | Create new user with valid data | POST |
+| Update User | Update existing user details | PUT |
+| Delete User | Remove user from system | DELETE |
+
+### Post Management Tests (7 tests)
+| Test Case | Description | Method |
+|-----------|-------------|--------|
+| Get All Posts | Retrieve all posts | GET |
+| Get Post By ID | Retrieve specific post | GET |
+| Get Posts By User ID | Filter posts by user | GET |
+| Create Post | Create new post | POST |
+| Update Post | Update existing post | PUT |
+| Delete Post | Remove post | DELETE |
+| Get Non-Existent Post | Verify 404 for invalid post | GET |
+
+**Total: 13 automated test cases**
+
+## 🏗️ Framework Architecture
+
+### Design Patterns Used
+
+1. **Page Object Model (Adapted for APIs)**
+   - Helper classes encapsulate API operations
+   - Tests interact with helpers, not direct API calls
+
+2. **Builder Pattern**
+   - TestDataBuilder creates test data objects
+   - Promotes reusability and consistency
+
+3. **DRY Principle**
+   - BaseTest eliminates duplicate setup code
+   - Endpoints class centralizes URLs
+
+### Helper Methods Example
+```java
+// Simple, reusable method in UserHelper
+public static Response getUserById(int userId) {
+    return given()
+        .pathParam("userId", userId)
+    .when()
+        .get(Endpoints.USER_BY_ID)
+    .then()
+        .statusCode(200)
+        .extract()
+        .response();
+}
+```
+
+### Test Example
+```java
+@Test
+public void testGetSingleUser() {
+    logTestStart("Get Single User");
+    
+    Response response = UserHelper.getUserById(1);
+    
+    assertThat(response.path("id"), equalTo(1));
+    assertThat(response.path("name"), notNullValue());
+    
+    logTestEnd("Get Single User");
+}
+```
+
+## 🎓 Key Learnings
+
+This project demonstrates proficiency in:
+
+- **API Testing Fundamentals**: HTTP methods, status codes, request/response validation
+- **RestAssured Framework**: Given-When-Then syntax, extractors, matchers
+- **Test Design**: Positive/negative scenarios, edge cases, data-driven approaches
+- **Code Organization**: Modular architecture, separation of concerns
+- **Best Practices**: DRY principle, reusability, maintainability
+- **Version Control**: Git workflow, meaningful commits
+
+## 🔮 Future Enhancements
+
+- [ ] **Allure Reporting**: Rich, interactive test reports
+- [ ] **CI/CD Integration**: GitHub Actions for automated test execution
+- [ ] **Environment Configuration**: Support for dev/staging/prod environments
+- [ ] **Data-Driven Testing**: TestNG DataProviders for parameterized tests
+- [ ] **API Schema Validation**: JSON Schema validation
+- [ ] **Performance Testing**: Response time assertions
+- [ ] **Database Validation**: Verify data persistence (when applicable)
+- [ ] **Authentication**: OAuth, JWT token handling
+- [ ] **Parallel Execution**: Faster test execution
+- [ ] **Docker Support**: Containerized test execution
 
 ## 👤 Author
-**Inas** - QA Engineer at Deezer
 
-## 📈 Next Steps
-- Refactor into BaseTest and utility classes
-- Add configuration management for multiple environments
-- Implement data-driven testing
-- Integrate Allure reporting
-- Add CI/CD pipeline integration
+**Inas**  
+QA Engineer @ Deezer  
+
+**Professional Goal**: Advancing from QA to Senior SDET through hands-on framework development and automation expertise.
+
+**Skills Demonstrated**:
+- Java Programming
+- API Test Automation
+- RestAssured Framework
+- TestNG
+- Maven
+- Git & GitHub
+- Software Testing Best Practices
+
+---
 
 ## 📝 License
-This project is for educational and portfolio purposes.
-```
 
-### **3. Update LinkedIn**
-
-Post something like:
-```
-🚀 Day 1 of my API Test Automation journey!
-
-Just built my first RestAssured framework from scratch with:
-✅ 11 comprehensive test cases
-✅ Full CRUD operation coverage
-✅ Multi-step workflow testing
-✅ Dynamic data extraction
-
-Excited to continue building this into a production-ready framework!
-
-#APITesting #TestAutomation #QA #RestAssured #Java #SoftwareTesting
-```
+This project is created for educational and portfolio purposes.
 
 ---
 
-## **🎓 Reflection Questions:**
+## 🙏 Acknowledgments
 
-Before our next session, think about:
-1. What part of today's session was most challenging?
-2. What clicked the easiest for you?
-3. What are you most excited to learn next?
+- Built as part of a structured 6-month learning roadmap
+- API provided by [JSONPlaceholder](https://jsonplaceholder.typicode.com/)
+- Inspired by industry best practices and professional SDET workflows
 
 ---
 
-## **📅 Next Session Preview - Framework Organization**
-
-We'll transform your tests from a single file into a professional framework:
-```
-api-test-framework/
-├── src/test/java/
-│   ├── base/
-│   │   └── BaseTest.java          // Common setup
-│   ├── tests/
-│   │   ├── UserTests.java         // User-specific tests
-│   │   ├── PostTests.java         // Post-specific tests
-│   │   └── AlbumTests.java        // Album-specific tests
-│   ├── utils/
-│   │   ├── ApiHelper.java         // Reusable API methods
-│   │   └── TestDataBuilder.java  // Test data creation
-│   └── config/
-│       └── Configuration.java     // Environment config
-└── testng.xml                      // Test suite configuration
+**⭐ If you find this project helpful, please consider giving it a star!**
