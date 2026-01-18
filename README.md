@@ -4,10 +4,10 @@
 ![Maven](https://img.shields.io/badge/Maven-3.x-red?style=flat&logo=apache-maven)
 ![RestAssured](https://img.shields.io/badge/RestAssured-5.3.0-green?style=flat)
 ![TestNG](https://img.shields.io/badge/TestNG-7.7.1-yellow?style=flat)
+![Tests](https://img.shields.io/badge/tests-31%20passing-brightgreen?style=flat)
 ![Build](https://img.shields.io/badge/build-passing-brightgreen?style=flat)
-![License](https://img.shields.io/badge/license-MIT-blue?style=flat)
 
-A professional-grade REST API test automation framework built with Java, RestAssured, and TestNG. This framework demonstrates industry best practices for API testing including structured helpers, reusable utilities, and comprehensive test coverage.
+A professional-grade REST API test automation framework with **31 comprehensive tests** covering complete CRUD operations across 5 API domains.
 
 ## 📋 Table of Contents
 - [Overview](#overview)
