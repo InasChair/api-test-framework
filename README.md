@@ -135,10 +135,9 @@ After test execution, open:
 ```
 target/surefire-reports/index.html
 ```
-
 ## 📊 Test Coverage
 
-**Total: 19 automated test cases** covering complete CRUD operations across 3 API domains
+**Total: 31 automated test cases** covering complete CRUD operations across 5 API domains
 
 ### User Management Tests (6 tests) ✅
 - Get All Users
@@ -165,9 +164,25 @@ target/surefire-reports/index.html
 - Update Existing Comment
 - Delete Comment
 
-**Execution Time:** ~6 seconds for full suite  
-**Success Rate:** 100% (19/19 passing)
+### Album Management Tests (6 tests) ✅
+- Get All Albums
+- Get Album by ID
+- Get Albums by User ID (query parameter filtering)
+- Create New Album
+- Update Existing Album
+- Delete Album
 
+### Photo Management Tests (6 tests) ✅
+- Get All Photos
+- Get Photo by ID
+- Get Photos by Album ID (query parameter filtering)
+- Create New Photo
+- Update Existing Photo
+- Delete Photo
+
+**Execution Time:** ~8 seconds for full suite  
+**Success Rate:** 100% (31/31 passing)  
+**API Coverage:** Complete JSONPlaceholder API
 ## 🏗️ Framework Architecture
 
 ### Design Patterns Used
