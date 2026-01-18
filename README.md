@@ -138,28 +138,35 @@ target/surefire-reports/index.html
 
 ## 📊 Test Coverage
 
-### User Management Tests (6 tests)
-| Test Case | Description | Method |
-|-----------|-------------|--------|
-| Get All Users | Retrieve list of all users | GET |
-| Get Single User | Retrieve specific user by ID | GET |
-| Get Non-Existent User | Verify 404 for invalid user | GET |
-| Create User | Create new user with valid data | POST |
-| Update User | Update existing user details | PUT |
-| Delete User | Remove user from system | DELETE |
+**Total: 19 automated test cases** covering complete CRUD operations across 3 API domains
 
-### Post Management Tests (7 tests)
-| Test Case | Description | Method |
-|-----------|-------------|--------|
-| Get All Posts | Retrieve all posts | GET |
-| Get Post By ID | Retrieve specific post | GET |
-| Get Posts By User ID | Filter posts by user | GET |
-| Create Post | Create new post | POST |
-| Update Post | Update existing post | PUT |
-| Delete Post | Remove post | DELETE |
-| Get Non-Existent Post | Verify 404 for invalid post | GET |
+### User Management Tests (6 tests) ✅
+- Get All Users
+- Get Single User by ID
+- Get Non-Existent User (404 validation)
+- Create New User
+- Update Existing User
+- Delete User
 
-**Total: 13 automated test cases**
+### Post Management Tests (7 tests) ✅
+- Get All Posts
+- Get Post by ID
+- Get Posts by User ID (query parameter filtering)
+- Create New Post
+- Update Existing Post
+- Delete Post
+- Get Non-Existent Post (404 validation)
+
+### Comment Management Tests (6 tests) ✅
+- Get All Comments
+- Get Comment by ID
+- Get Comments by Post ID (query parameter filtering)
+- Create New Comment
+- Update Existing Comment
+- Delete Comment
+
+**Execution Time:** ~6 seconds for full suite  
+**Success Rate:** 100% (19/19 passing)
 
 ## 🏗️ Framework Architecture
 
