@@ -14,4 +14,10 @@
         </classes>
     </test>
 
+    <test name="Comment API Tests">
+        <classes>
+            <class name="tests.CommentTests"/>
+        </classes>
+    </test>
+
 </suite>

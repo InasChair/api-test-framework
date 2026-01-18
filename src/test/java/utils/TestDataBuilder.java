@@ -29,6 +29,20 @@ public class TestDataBuilder {
     }
 
     /**
+     * Build comment JSON request body
+     */
+    public static String buildCommentJson(String name, String body, String email, int postId) {
+        return String.format("""
+            {
+              "name": "%s",
+              "body": "%s",
+              "email": "%s",
+              "postId": %d
+            }
+            """, name, body,email, postId);
+    }
+
+    /**
      * Generate random email
      */
     public static String generateRandomEmail() {

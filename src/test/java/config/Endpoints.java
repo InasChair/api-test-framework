@@ -12,6 +12,7 @@ public class Endpoints {
 
     // Comment endpoints
     public static final String COMMENTS = "/comments";
+    public static final String COMMENTS_BY_ID = "/comments/{commentId}";
 
     // Album endpoints
     public static final String ALBUMS = "/albums";
