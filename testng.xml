@@ -20,4 +20,16 @@
         </classes>
     </test>
 
+    <test name="Album API Tests">
+        <classes>
+            <class name="tests.AlbumTests"/>
+        </classes>
+    </test>
+
+    <test name="Photo API Tests">
+        <classes>
+            <class name="tests.PhotoTests"/>
+        </classes>
+    </test>
+
 </suite>
