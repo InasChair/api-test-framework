@@ -19,6 +19,8 @@ A professional-grade REST API test automation framework with **31 comprehensive 
 - [Test Coverage](#test-coverage)
 - [Framework Architecture](#framework-architecture)
 - [Key Learnings](#key-learnings)
+- [Framework Highlights](#framework-highlights)
+- [Framework Metrics](#framework-metrics)
 - [Future Enhancements](#future-enhancements)
 - [Author](#author)
 
