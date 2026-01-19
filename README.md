@@ -6,6 +6,8 @@
 ![TestNG](https://img.shields.io/badge/TestNG-7.7.1-yellow?style=flat)
 ![Tests](https://img.shields.io/badge/tests-31%20passing-brightgreen?style=flat)
 ![Build](https://img.shields.io/badge/build-passing-brightgreen?style=flat)
+![CI](https://github.com/InasChair/api-test-framework/actions/workflows/maven.yml/badge.svg)
+
 
 A professional-grade REST API test automation framework with **31 comprehensive tests** covering complete CRUD operations across 5 API domains.
 
